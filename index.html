@@ -4,20 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="./global.css">
 </head>
 <body>
   <main>
     <section
+      class="capture"
       name="captureInput"
     >
-      <textarea 
-        name="message" 
+      <div 
+        contenteditable=true
+        name="message"
+        class="message"
         id="message"
-        cols="45"
-        rows="30"
-        placeholder="Digite seu texto"
-      ></textarea>
+      >
+        <div>
+        Digite seu texto aqui
+        </div>
+      </div>
       <button
+        class="criptfy"
         name="encrypt"
         id="encrypt"
       >
@@ -25,15 +31,18 @@
       </button>
       
       <button
+        class="decryptfy"
         name="decrypt"
         id="decrypt"
       >
         Descriptografar
       </button>
   </section>
-  <section>
+  <section
+    class="result"
+  >
     <h2>Nenhuma mensagem encontrada</h2>
-    <p>Digite um texto que você desesja criptografar ou descriptografar</p>
+    <p>Digite um texto que você deseja criptografar ou descriptografar</p>
   </section>
   </main>
 </body>

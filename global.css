@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;500;900&display=swap');
+
+body {
+  display: flex;
+  flex: column;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+}
+
+.capture {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.message {
+  align-self: center;
+  background-color: lightgrey;
+  border: solid 2px rgb(190, 190, 190);
+  border-radius: 0.4rem;
+  color: darkblue;
+  font-size: 18px;
+  margin-top: 2rem;
+  min-height: 124px;
+  max-height: 430px;
+  text-align: center;
+  width: 80%;
+}
+
+.message > * {
+  margin: 1rem;
+  max-height: 380px;
+  overflow: auto;
+}
+
+.criptfy {
+  align-self: center;
+  background-color: darkblue;
+  border-radius: 20px;
+  border-style: none;
+  font-weight: 400;
+  color: white;
+  height: 3rem;
+  width: 80%;
+}
+
+.decryptfy {
+  align-self: center;
+  background-color: white;
+  border: solid 2px darkblue;
+  border-radius: 20px;
+  color: darkblue;
+  font-weight: 400;
+  height: 3rem;
+  width: 80%;
+}
+
+.result {
+  align-self: center;
+  width: 80%;
+  text-align: center;
+}
