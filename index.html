@@ -18,7 +18,9 @@
         class="message"
         id="message"
       >
-        <div>
+        <div
+          id="placeholderText"
+        >
         Digite seu texto aqui
         </div>
       </div>
@@ -26,6 +28,7 @@
         class="criptfy"
         name="encrypt"
         id="encrypt"
+        onclick="getMessage(name)"
       >
         Criptografar
       </button>
@@ -34,6 +37,7 @@
         class="decryptfy"
         name="decrypt"
         id="decrypt"
+        onclick="getMessage(name)"
       >
         Descriptografar
       </button>
@@ -45,5 +49,8 @@
     <p>Digite um texto que você deseja criptografar ou descriptografar</p>
   </section>
   </main>
+  <script
+    src="./main.js"
+  ></script>
 </body>
 </html>
