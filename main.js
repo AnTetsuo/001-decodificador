@@ -14,7 +14,8 @@ textArea.addEventListener("click", resetInnerText)
 function getMessage(name) {
   const operation = name == "encrypt";
   const message = document.getElementsByClassName("message")[0]
-    .textContent
+    .innerHTML
+    .toString()
     .trimEnd()
     .trimStart();
 
@@ -24,16 +25,14 @@ function getMessage(name) {
     const encrypted = mapped.join("");
     
     return resultArea.innerHTML = `
-      <h2>Sua mensagem criptografada</h2>
-      <p>${encrypted}</p>
-    `;
+      <h2 class="parsed">Sua mensagem criptografada</h2>
+      <div class="parsed">${encrypted}</div>`;
   }
 
   const decrypted = decrypt(message);
   resultArea.innerHTML = `
-    <h2>Sua mensagem descriptografada</h2>
-    <p>${decrypted}</p>
-  `;
+    <h2 class="parsed">Sua mensagem descriptografada</h2>
+    <div class="parsed">${decrypted}</div>`;
 }
 
 function encrypt(char) {
@@ -46,21 +45,16 @@ function decrypt(message) {
   let messageMut = message;
   const decryptValues = Object.keys(KEY_MAP);
   const cryptValues = Object.values(KEY_MAP);
-  const occur = cryptValues.map((key) => {
-    return message.includes(key);
-  })
+  const occur = cryptValues.map((key) => message.includes(key));
   cryptValues.forEach((key, index) => {
     if (occur[index]) 
-      messageMut = messageMut.replaceAll(key, decryptValues[index])
+      messageMut = messageMut.replaceAll(key, decryptValues[index]);
   })
 
   return messageMut;
 }
 
 function resetInnerText() {
-  const defaultMessage = document.getElementById("placeholderText");
-  defaultMessage.textContent = "";
-  defaultMessage.innerHTML = "<br>"
-
+  textArea.textContent = "";
   textArea.removeEventListener("click", resetInnerText);
 }
